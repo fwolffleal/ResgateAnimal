@@ -8,6 +8,7 @@ import styles from './styles';
 import logoImg from '../../assets/logo.png';
 import api from '../../services/api';
 import currency from '../../utils/currency';
+import Incident from '../../entities/incident';
 
 export default function Incidents() {
     const navigation = useNavigation();
@@ -16,7 +17,7 @@ export default function Incidents() {
     const [ incidents, setIncidents ] = useState([]);
     const [ total, setTotal ] = useState(0)
 
-    function navigateToDetails(incident) {
+    function navigateToDetails(incident: Incident) {
         navigation.navigate('Details', { incident });
     }
 

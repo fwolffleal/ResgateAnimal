@@ -3,6 +3,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
 import { FlatList, Image, Text, View, TouchableOpacity, Linking } from 'react-native';
 import * as MailComposer from 'expo-mail-composer';
+import Incident from '../../entities/incident';
 
 import styles from './styles';
 
@@ -13,7 +14,7 @@ export default function Details() {
   const navigation = useNavigation();
   const route = useRoute();
 
-  const { incident } = route.params;
+  const incident: Incident = route.params.incident;
   const value = currency(incident.value);
   const message = `Olá ${incident.name}, estou entrando em contato porque quero ajudar no caso ${incident.title} com o valor de ${value}`
 
